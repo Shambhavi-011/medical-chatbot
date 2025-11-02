@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Assistant Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Medical Disclaimer Banner -->
+    <div class="disclaimer-banner">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span>This chatbot provides general information only. NOT a substitute for professional medical advice. Consult a doctor for medical concerns.</span>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="bot-avatar medical">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="header-info">
+                    <h2>Medical Assistant</h2>
+                    <span class="status">
+                        <span class="status-dot"></span>
+                        Online
+                    </span>
+                </div>
+            </div>
+            
+            <div class="quick-actions">
+                <h3>Quick Topics</h3>
+                <button class="quick-btn" data-query="common symptoms">
+                    <i class="fas fa-thermometer-half"></i> Common Symptoms
+                </button>
+                <button class="quick-btn" data-query="first aid">
+                    <i class="fas fa-first-aid"></i> First Aid
+                </button>
+                <button class="quick-btn" data-query="medications">
+                    <i class="fas fa-pills"></i> Medications
+                </button>
+                <button class="quick-btn" data-query="healthy lifestyle">
+                    <i class="fas fa-heartbeat"></i> Healthy Lifestyle
+                </button>
+                <button class="quick-btn" data-query="what can you do">
+                    <i class="fas fa-question-circle"></i> Help
+                </button>
+            </div>
+
+            <div class="emergency-contact">
+                <h3>Emergency</h3>
+                <p><i class="fas fa-ambulance"></i> Call: 911 (US) / 108 (India)</p>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-container">
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar medical">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>Hello! I'm your Medical Information Assistant. I can help you with information about common illnesses, symptoms, first aid, and medications. How can I assist you today? 🏥</p>
+                        </div>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="message-avatar medical">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- Scroll to Bottom Button -->
+            <button class="scroll-to-bottom" id="scrollToBottomBtn">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+
+            <!-- Input Area -->
+            <div class="chat-input-container">
+                <form class="chat-input-form" id="chatForm">
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="Describe your symptoms or ask a question..." 
+                            rows="1"
+                            autocomplete="off"
+                            maxlength="500"
+                        ></textarea>
+                        <div class="input-actions">
+                            <button type="button" class="emoji-btn" id="emojiBtn" title="Emoji">
+                                <i class="far fa-smile"></i>
+                            </button>
+                            <button type="submit" class="send-btn" id="sendBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="char-counter">
+                        <span id="charCount">0</span>/500
+                    </div>
+                </form>
+                
+                <!-- Emoji Picker -->
+                <div class="emoji-picker" id="emojiPicker">
+                    <span>😊</span><span>😷</span><span>🤒</span><span>🏥</span>
+                    <span>💊</span><span>🩺</span><span>💉</span><span>🌡️</span>
+                    <span>❤️</span><span>💚</span><span>👍</span><span>👋</span>
+                    <span>🙏</span><span>💪</span><span>😔</span><span>😊</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="errorToast">
+        <i class="fas fa-exclamation-circle"></i>
+        <span id="toastMessage">Something went wrong!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
